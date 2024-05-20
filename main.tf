@@ -3,6 +3,9 @@ resource "helm_release" "this" {
   namespace = var.namespace
   chart     = "${path.module}/charts/application"
   wait      = false
+  values = [
+    var.values_yaml
+  ]
 }
 
 
